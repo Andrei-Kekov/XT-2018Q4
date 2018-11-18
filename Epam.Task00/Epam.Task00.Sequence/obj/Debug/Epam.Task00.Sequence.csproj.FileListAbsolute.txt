@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Sequence\bin\Debug\Epam.Task00.Sequence.exe.config
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Sequence\bin\Debug\Epam.Task00.Sequence.exe
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Sequence\bin\Debug\Epam.Task00.Sequence.pdb
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Sequence\obj\Debug\Epam.Task00.Sequence.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Sequence\obj\Debug\Epam.Task00.Sequence.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Sequence\obj\Debug\Epam.Task00.Sequence.exe
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Sequence\obj\Debug\Epam.Task00.Sequence.pdb

@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Simple\bin\Debug\Epam.Task00.Simple.exe.config
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Simple\bin\Debug\Epam.Task00.Simple.exe
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Simple\bin\Debug\Epam.Task00.Simple.pdb
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Simple\obj\Debug\Epam.Task00.Simple.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Simple\obj\Debug\Epam.Task00.Simple.exe
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Simple\obj\Debug\Epam.Task00.Simple.pdb
