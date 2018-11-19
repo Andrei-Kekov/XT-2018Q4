@@ -24,6 +24,5 @@ class Task00
         Console.WriteLine("Введите N:");
         uint N = uint.Parse(Console.ReadLine());
         Square(N);
-        Console.ReadLine();
     }
 }

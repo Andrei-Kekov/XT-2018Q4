@@ -4,3 +4,4 @@ C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Square\bin\Debug\Epam.Task00.
 C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Square\obj\Debug\Epam.Task00.Square.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Square\obj\Debug\Epam.Task00.Square.exe
 C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Square\obj\Debug\Epam.Task00.Square.pdb
+C:\Users\User\source\repos\Epam.Task00\Epam.Task00.Square\obj\Debug\Epam.Task00.Square.csprojAssemblyReference.cache

@@ -19,6 +19,5 @@ class Task00
         Console.WriteLine("Введите N:");
         uint N = uint.Parse(Console.ReadLine());
         Console.WriteLine(Sequence(N));
-        Console.ReadLine();
     }
 }
