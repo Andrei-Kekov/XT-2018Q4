@@ -5,7 +5,8 @@ class Task00
     {
         if (N <= 1u)
             return false;
-        for (uint i = 2u; i <= N / 2u; i++)
+        uint half = N / 2u;
+        for (uint i = 2u; i <= half; i++)
             if (N % i == 0u)
                 return false;
         return true;
