@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.AverageStringLength\bin\Debug\Epam.Task01.AverageStringLength.exe.config
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.AverageStringLength\bin\Debug\Epam.Task01.AverageStringLength.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.AverageStringLength\bin\Debug\Epam.Task01.AverageStringLength.pdb
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.AverageStringLength\obj\Debug\Epam.Task01.AverageStringLength.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.AverageStringLength\obj\Debug\Epam.Task01.AverageStringLength.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.AverageStringLength\obj\Debug\Epam.Task01.AverageStringLength.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.AverageStringLength\obj\Debug\Epam.Task01.AverageStringLength.pdb

@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.ArrayProcessing\bin\Debug\Epam.Task01.ArrayProcessing.exe.config
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.ArrayProcessing\bin\Debug\Epam.Task01.ArrayProcessing.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.ArrayProcessing\bin\Debug\Epam.Task01.ArrayProcessing.pdb
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.ArrayProcessing\obj\Debug\Epam.Task01.ArrayProcessing.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.ArrayProcessing\obj\Debug\Epam.Task01.ArrayProcessing.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.ArrayProcessing\obj\Debug\Epam.Task01.ArrayProcessing.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.ArrayProcessing\obj\Debug\Epam.Task01.ArrayProcessing.pdb
