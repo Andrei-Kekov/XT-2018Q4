@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Rectangle\bin\Debug\Epam.Task01.Rectangle.exe.config
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Rectangle\bin\Debug\Epam.Task01.Rectangle.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Rectangle\bin\Debug\Epam.Task01.Rectangle.pdb
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Rectangle\obj\Debug\Epam.Task01.Rectangle.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Rectangle\obj\Debug\Epam.Task01.Rectangle.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Rectangle\obj\Debug\Epam.Task01.Rectangle.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Rectangle\obj\Debug\Epam.Task01.Rectangle.pdb

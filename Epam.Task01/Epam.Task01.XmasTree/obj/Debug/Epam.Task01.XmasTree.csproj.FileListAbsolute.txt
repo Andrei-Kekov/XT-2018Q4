@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.XmasTree\bin\Debug\Epam.Task01.XmasTree.exe.config
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.XmasTree\bin\Debug\Epam.Task01.XmasTree.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.XmasTree\bin\Debug\Epam.Task01.XmasTree.pdb
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.XmasTree\obj\Debug\Epam.Task01.XmasTree.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.XmasTree\obj\Debug\Epam.Task01.XmasTree.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.XmasTree\obj\Debug\Epam.Task01.XmasTree.pdb

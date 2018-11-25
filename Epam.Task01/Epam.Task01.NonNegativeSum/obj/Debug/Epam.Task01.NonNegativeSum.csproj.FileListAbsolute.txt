@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NonNegativeSum\bin\Debug\Epam.Task01.NonNegativeSum.exe.config
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NonNegativeSum\bin\Debug\Epam.Task01.NonNegativeSum.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NonNegativeSum\bin\Debug\Epam.Task01.NonNegativeSum.pdb
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NonNegativeSum\obj\Debug\Epam.Task01.NonNegativeSum.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NonNegativeSum\obj\Debug\Epam.Task01.NonNegativeSum.exe
+C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NonNegativeSum\obj\Debug\Epam.Task01.NonNegativeSum.pdb
