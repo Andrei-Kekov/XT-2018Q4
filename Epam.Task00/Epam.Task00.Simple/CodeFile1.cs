@@ -1,13 +1,13 @@
 ﻿using System;
-class Task00
+class Task00_2
 {
-    static bool Simple(uint N)
+    static bool Simple(uint n)
     {
-        if (N <= 1u)
+        if (n <= 1u)
             return false;
-        uint half = N / 2u;
-        for (uint i = 2u; i <= half; i++)
-            if (N % i == 0u)
+        uint stop = (uint) Math.Sqrt(n);
+        for (uint i = 2u; i <= stop; i++)
+            if (n % i == 0u)
                 return false;
         return true;
     }
@@ -16,7 +16,10 @@ class Task00
     {
         Console.WriteLine("задача 0.2. Simple");
         Console.WriteLine("Введите N:");
-        uint N = uint.Parse(Console.ReadLine());
-        Console.WriteLine(Simple(N));
+        uint n;
+        if (uint.TryParse(Console.ReadLine(), out n))
+            Console.WriteLine(Simple(n));
+        else
+            Console.WriteLine("Это не подходящее число.");
     }
 }

@@ -1,23 +1,21 @@
 ﻿using System;
 
-class Task00
+class Task00_1
 {
-    static string Sequence(uint N)
+    static void Sequence(uint n)
     {
-        string s = "";
-        for (uint i = 1u; i <= N; i++)
-            if (i == N)
-                s += i;
-            else
-                s += (i + ", ");
-        return s;
+        for (uint i = 1u; i <= n; i++)
+            Console.Write(i + (i < n ? ", " : Environment.NewLine));
     }
 
     static void Main()
     {
         Console.WriteLine("Задача 0.1. Sequence");
         Console.WriteLine("Введите N:");
-        uint N = uint.Parse(Console.ReadLine());
-        Console.WriteLine(Sequence(N));
+        uint n;
+        if (uint.TryParse(Console.ReadLine(), out n))
+            Sequence(n);
+        else
+            Console.WriteLine("Это не подходящее число.");
     }
 }

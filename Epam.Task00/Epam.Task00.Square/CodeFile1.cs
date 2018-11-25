@@ -1,19 +1,16 @@
 ﻿using System;
 
-class Task00
+class Task00_1
 {
-    static void Square(uint N)
+    static void Square(uint n)
     {
         uint i;
         uint j;
-        uint center = N / 2u + 1u;
-        for (i = 1; i <= N; i++)
+        uint center = n / 2u + 1u;
+        for (i = 1; i <= n; i++)
         {
-            for (j = 1; j <= N; j++)
-                if (i == center && j == center)
-                    Console.Write(' ');
-                else
-                    Console.Write('*');
+            for (j = 1; j <= n; j++)
+                Console.Write(i == center && j == center? ' ' : '*');
             Console.WriteLine();
         }
     }
@@ -22,7 +19,10 @@ class Task00
     {
         Console.WriteLine("Задача 0.3. Square");
         Console.WriteLine("Введите N:");
-        uint N = uint.Parse(Console.ReadLine());
-        Square(N);
+        uint n;
+        if (uint.TryParse(Console.ReadLine(), out n))
+            Square(n);
+        else
+            Console.WriteLine("Это не подходящее число.");
     }
 }
