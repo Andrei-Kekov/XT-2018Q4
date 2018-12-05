@@ -1,6 +1,0 @@
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NoPositive\bin\Debug\Epam.Task01.NoPositive.exe.config
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NoPositive\bin\Debug\Epam.Task01.NoPositive.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NoPositive\bin\Debug\Epam.Task01.NoPositive.pdb
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NoPositive\obj\Debug\Epam.Task01.NoPositive.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NoPositive\obj\Debug\Epam.Task01.NoPositive.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.NoPositive\obj\Debug\Epam.Task01.NoPositive.pdb

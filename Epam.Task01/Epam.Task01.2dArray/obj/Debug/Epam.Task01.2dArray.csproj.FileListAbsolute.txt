@@ -1,6 +1,0 @@
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.2dArray\bin\Debug\Epam.Task01.2dArray.exe.config
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.2dArray\bin\Debug\Epam.Task01.2dArray.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.2dArray\bin\Debug\Epam.Task01.2dArray.pdb
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.2dArray\obj\Debug\Epam.Task01.2dArray.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.2dArray\obj\Debug\Epam.Task01.2dArray.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.2dArray\obj\Debug\Epam.Task01.2dArray.pdb

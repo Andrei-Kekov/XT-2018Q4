@@ -1,7 +1,0 @@
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.FontAdjustment\bin\Debug\Epam.Task01.FontAdjustment.exe.config
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.FontAdjustment\bin\Debug\Epam.Task01.FontAdjustment.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.FontAdjustment\bin\Debug\Epam.Task01.FontAdjustment.pdb
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.FontAdjustment\obj\Debug\Epam.Task01.FontAdjustment.csprojAssemblyReference.cache
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.FontAdjustment\obj\Debug\Epam.Task01.FontAdjustment.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.FontAdjustment\obj\Debug\Epam.Task01.FontAdjustment.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.FontAdjustment\obj\Debug\Epam.Task01.FontAdjustment.pdb

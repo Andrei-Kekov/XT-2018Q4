@@ -1,6 +1,0 @@
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.SumOfNumbers\bin\Debug\Epam.Task01.SumOfNumbers.exe.config
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.SumOfNumbers\bin\Debug\Epam.Task01.SumOfNumbers.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.SumOfNumbers\bin\Debug\Epam.Task01.SumOfNumbers.pdb
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.SumOfNumbers\obj\Debug\Epam.Task01.SumOfNumbers.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.SumOfNumbers\obj\Debug\Epam.Task01.SumOfNumbers.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.SumOfNumbers\obj\Debug\Epam.Task01.SumOfNumbers.pdb

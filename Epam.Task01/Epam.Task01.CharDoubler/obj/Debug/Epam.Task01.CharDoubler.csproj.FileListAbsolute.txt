@@ -1,7 +1,0 @@
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.CharDoubler\obj\Debug\Epam.Task01.CharDoubler.csprojAssemblyReference.cache
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.CharDoubler\obj\Debug\Epam.Task01.CharDoubler.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.CharDoubler\bin\Debug\Epam.Task01.CharDoubler.exe.config
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.CharDoubler\bin\Debug\Epam.Task01.CharDoubler.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.CharDoubler\bin\Debug\Epam.Task01.CharDoubler.pdb
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.CharDoubler\obj\Debug\Epam.Task01.CharDoubler.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.CharDoubler\obj\Debug\Epam.Task01.CharDoubler.pdb

@@ -1,7 +1,0 @@
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Triangle\bin\Debug\Epam.Task01.Triangle.exe.config
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Triangle\bin\Debug\Epam.Task01.Triangle.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Triangle\bin\Debug\Epam.Task01.Triangle.pdb
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Triangle\obj\Debug\Epam.Task01.Triangle.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Triangle\obj\Debug\Epam.Task01.Triangle.exe
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Triangle\obj\Debug\Epam.Task01.Triangle.pdb
-C:\Users\User\source\repos\Epam.Task01\Epam.Task01.Triangle\obj\Debug\Epam.Task01.Triangle.csprojAssemblyReference.cache
