@@ -5,22 +5,21 @@ class Task01_6
     [Flags]
     enum Font : byte
     {
-        None = 0,
-        Bold = 1,
-        Italic = 2,
-        Underline = 4,
+        None = 0b000,
+        Bold = 0b001,
+        Italic = 0b010,
+        Underline = 0b100,
     }
 
     static void Main()
     {
-        int key = 0;
         Font Current = Font.None;
-        int i;
-        while(true)
+        int key;
+        while (true)
             {
                 Console.WriteLine("Параметры надписи: " + Current);
                 Console.WriteLine("Введите:");
-                for (i = 1; i <= 3; i++)
+                for (int i = 1; i <= 3; i++)
                     Console.WriteLine("\t" + i + ": " + (Font)Math.Pow(2.0, i - 1));
                 if(int.TryParse(Console.ReadLine(), out key) && key >= 1 && key <= 3)
                     Current ^= (Font)Math.Pow(2.0, key - 1);
