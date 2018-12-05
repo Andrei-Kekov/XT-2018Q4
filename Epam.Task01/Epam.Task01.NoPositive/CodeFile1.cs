@@ -1,8 +1,8 @@
 ﻿using System;
 
-class Task01_8
+public class Task01_8
 {
-    static int[,,] Random3dArray()
+    public static int[,,] Random3dArray()
     {
         Random r = new Random();
         int[,,] a = new int[3, 3, 3];
@@ -14,7 +14,7 @@ class Task01_8
         return a;
     }
 
-    static void Display(int[,,] a)
+    public static void Display(int[,,] a)
     {
         int i, j, k;
         for (i = 0; i < 3; i++)
@@ -29,7 +29,7 @@ class Task01_8
         }
     }
 
-    static void Main()
+    public static void Main()
     {
         int[,,] a = Random3dArray();
         int i, j, k;

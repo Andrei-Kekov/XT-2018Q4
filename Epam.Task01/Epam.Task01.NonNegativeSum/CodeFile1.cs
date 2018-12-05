@@ -1,8 +1,8 @@
 ﻿using System;
 
-class Task01_9
+public class Task01_9
 {
-    static int[] RandomArray()
+    public static int[] RandomArray()
     {
         Random r = new Random();
         int[] Array = new int[10];
@@ -11,14 +11,14 @@ class Task01_9
         return Array;
     }
 
-    static void Display(int[] a)
+    public static void Display(int[] a)
     {
         for (int i = 0; i < a.Length; i++)
             Console.Write(a[i] + "; ");
         Console.WriteLine();
     }
 
-    static void Main()
+    public static void Main()
     {
         int[] a = RandomArray();
 

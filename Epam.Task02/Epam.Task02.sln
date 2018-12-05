@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.06_Ring", "Epam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.07_VectorGraphicsEditor", "Epam.Task02.07_VectorGraphicsEditor\Epam.Task02.07_VectorGraphicsEditor.csproj", "{B1A458A7-314F-4572-9EE4-E4D34A023A4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.08_Game", "Epam.Task02.08_Game\Epam.Task02.08_Game.csproj", "{925B5B77-AB31-4DA3-BD58-BD0D256C4BD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B1A458A7-314F-4572-9EE4-E4D34A023A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A458A7-314F-4572-9EE4-E4D34A023A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A458A7-314F-4572-9EE4-E4D34A023A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{925B5B77-AB31-4DA3-BD58-BD0D256C4BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{925B5B77-AB31-4DA3-BD58-BD0D256C4BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{925B5B77-AB31-4DA3-BD58-BD0D256C4BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{925B5B77-AB31-4DA3-BD58-BD0D256C4BD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,36 +1,53 @@
 ﻿using System;
 
-class Task01_4
+public class Task01_4
 {
-    static void Triangle(uint center, uint height)
+    public static void XmasTree(uint n)
     {
-        uint i;
-        uint j;
-        for (i = 1u; i <= height; i++)
+        for (uint i = 1u; i <= n; i++)
         {
-            for (j = 1u; j <= center - i; j++)
-                Console.Write(' ');
-            for (j = 1u; j <= 2u * i - 1u; j++)
-                Console.Write('*');
-            Console.WriteLine();
+            Triangle(n, i);
         }
     }
 
-
-    static void Main()
+    public static void Triangle(uint center, uint height)
     {
-        Console.WriteLine("Задача 1.4. X-mas Tree");
-        Console.WriteLine("Введите N:");
+        uint count;
+        uint spaces;
+        uint asterisks;
+
+        for (uint row = 1u; row <= height; row++)
+        {
+            spaces = center - row;
+            asterisks = (2u * row) - 1u;
+
+            for (count = 1u; count <= spaces; count++)
+            {
+                Console.Write(' ');
+            }
+
+            for (count = 1u; count <= asterisks; count++)
+            {
+                Console.Write('*');
+            }
+
+            Console.WriteLine();
+        }
+    }
+    
+    public static void Main()
+    {
+        Console.WriteLine("Task 1.4. X-mas Tree");
+        Console.WriteLine("Enter the value of N:");
         uint n;
 
         if (uint.TryParse(Console.ReadLine(), out n))
         {
-            for (uint i = 1u; i <= n; i++)
-                Triangle(n, i);
+            XmasTree(n);
         }
-
         else
-            Console.WriteLine("Некорректное значение.");
-
+        {
+            Console.WriteLine("Incorrect value.");
+        }
     }
 }

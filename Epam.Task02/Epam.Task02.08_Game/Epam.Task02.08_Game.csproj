@@ -7,7 +7,7 @@
     <ProjectGuid>{925B5B77-AB31-4DA3-BD58-BD0D256C4BD8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Epam.Task02._08_Game</RootNamespace>
-    <AssemblyName>Epam.Task02._08_Game</AssemblyName>
+    <AssemblyName>Epam.Task02.08_Game</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes.cs" />
+    <Compile Include="Main.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

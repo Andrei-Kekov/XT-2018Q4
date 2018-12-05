@@ -1,8 +1,8 @@
 ﻿using System;
 
-class Task01_11
+public class Task01_11
 {
-    static void Main()
+    public static void Main()
     {
         Console.WriteLine("Задача 1.11. Average String Length");
         Console.WriteLine("Введите текст:");
@@ -17,10 +17,12 @@ class Task01_11
             {
                 letters++;
                 if (!char.IsLetter(s[i + 1]))
-                    words++;    //конец слова
+                {
+                    words++;   // конец слова
+                }
             }
         }
 
-        Console.WriteLine("Средняя длина слова в тексте: " + (words != 0? (double) letters / words : 0));
+        Console.WriteLine("Средняя длина слова в тексте: " + (words != 0 ? (double)letters / words : 0));
     }
 }

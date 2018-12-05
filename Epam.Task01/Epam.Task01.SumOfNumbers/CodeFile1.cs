@@ -1,14 +1,21 @@
 ﻿using System;
 
-class Task01_5
+public class Task01_5
 {
-    static void Main()
+    public static uint SumOfNumbers(uint x, uint a1, uint a2)
     {
-        Console.WriteLine("Задача 1.5. Sum of Numbers");
-        uint s = 0u;
-        for (uint i = 3u; i < 1000u; i++)
-            if (i % 3u == 0 || i % 5u == 0)
-                s += i;
-        Console.WriteLine(s);
+        return PartialSum(x, a1) + PartialSum(x, a2) - PartialSum(x, a1 * a2);
+    }
+
+    public static uint PartialSum(uint x, uint d)
+    {
+        uint n = x / d;
+        return d * n * (n + 1) / 2;
+    }
+
+    public static void Main()
+    {
+        Console.WriteLine("Task 1.5. Sum of Numbers");
+        Console.WriteLine(SumOfNumbers(1000u, 3u, 5u));
     }
 }

@@ -1,28 +1,45 @@
 ﻿using System;
 
-class Task01_3
+public class Task01_3
 {
-    static void Main()
+    public static void AnotherTriangle(uint n)
     {
-        Console.WriteLine("Задача 1.2. Another Triangle");
-        Console.WriteLine("Введите N:");
+        uint count;
+        uint spaces;
+        uint asterisks;
+
+        for (uint row = 1u; row <= n; row++)
+        {
+            spaces = n - row;
+            asterisks = (2u * row) - 1u;
+
+            for (count = 1u; count <= spaces; count++)
+            {
+                Console.Write(' ');
+            }
+
+            for (count = 1u; count <= asterisks; count++)
+            {
+                Console.Write('*');
+            }
+
+            Console.WriteLine();
+        }
+    }
+
+    public static void Main()
+    {
+        Console.WriteLine("Task 1.3. Another Triangle");
+        Console.WriteLine("Enter the value of N:");
         uint n;
 
         if (uint.TryParse(Console.ReadLine(), out n))
         {
-            uint i;
-            uint j;
-            for (i = 1u; i <= n; i++)
-            {
-                for (j = 1u; j <= n - i; j++)
-                    Console.Write(' ');
-                for (j = 1u; j <= 2u * i - 1u; j++)
-                    Console.Write('*');
-                Console.WriteLine();
-            }
+            AnotherTriangle(n);
         }
-
         else
-            Console.WriteLine("Некорректное значение.");
+        {
+            Console.WriteLine("Incorrect value.");
+        }
     }
 }

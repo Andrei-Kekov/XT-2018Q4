@@ -1,54 +1,116 @@
 ﻿using System;
 
-class Task01_7
+public class Task01_7
 {
-    static int[] RandomArray()
+    public static int[] RandomArray(int n)
     {
         Random r = new Random();
-        int[] a = new int[10];
-        for (int i = 0; i < 10; i++)
-            a[i] = r.Next(19) - 9;
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = r.Next(-10, 11);
+        }
+
         return a;
     }
 
-    static void Main()
+    public static void Display(int[] a)
     {
-        int[] a = RandomArray();
-        int i;
-        int j;
+        for (int i = 0; i < a.Length; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+
+        Console.WriteLine();
+    }
+
+    public static int Min(int[] a)
+    {
         int min = a[0];
+
+        for (int i = 1; i < a.Length; i++)
+        {
+            if (a[i] < min)
+            {
+                min = a[i];
+            }
+        }
+
+        return min;
+    }
+
+    public static int Max(int[] a)
+    {
         int max = a[0];
 
-        Console.WriteLine("Задача 1.7. Array Processing");
-        Console.WriteLine("Исходный массив:");
-        for (i = 0; i < 10; i++)
+        for (int i = 1; i < a.Length; i++)
         {
-            Console.Write(a[i] + "; ");
-            if (a[i] < min)
-                min = a[i];
             if (a[i] > max)
+            {
                 max = a[i];
+            }
         }
-        Console.WriteLine();
 
-        Console.WriteLine("Наименьший элемент: " + min);
-        Console.WriteLine("Наибольший элемент: " + max);
+        return max;
+    }
 
-        int t;
-        for (i = 0; i < 10; i++)
-            for (j = 0; j < 9; j++)
-                if (a[j] > a[j + 1])
-                {
-                    t = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = t;
-                }
+    public static void Sort(int[] a)
+    {
+        Sort(a, 0, a.Length - 1);
+    }
 
-        Console.WriteLine("Массив после сортировки:");
-        for (i = 0; i < 10; i++)
+    public static void Sort(int[] a, int left, int right)
+    {
+        int i = left;
+        int j = right;
+        int x = a[(i + j) / 2];
+        int y;
+
+        do
         {
-            Console.Write(a[i] + "; ");
+            while (a[i] < x && i < right)
+            {
+                i++;
+            }
+
+            while (x < a[i] && j < left)
+            {
+                j++;
+            }
+
+            if (i <= j)
+            {
+                y = a[i];
+                a[i] = a[j];
+                a[j] = y;
+                i++;
+                j--;
+            }
         }
-        Console.WriteLine();
+        while (i <= j);
+
+        if (left < j)
+        {
+            Sort(a, left, j);
+        }
+
+        if (i < right)
+        {
+            Sort(a, i, right);
+        }
+    }
+
+    public static void Main()
+    {
+        Console.WriteLine("Task 1.7. Array Processing");
+        Console.WriteLine("Initial array:");
+        int[] a = RandomArray(10);
+        Display(a);
+        Console.WriteLine("Minimum element: " + Min(a));
+        Console.WriteLine("Maximum element: " + Max(a));
+        Console.WriteLine("Sorted array:");
+        Sort(a);
+        Display(a);
     }
 }
