@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Task01_5
+public class Program
 {
     public static uint SumOfNumbers(uint x, uint a1, uint a2)
     {

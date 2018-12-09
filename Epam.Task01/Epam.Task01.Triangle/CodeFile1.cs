@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Task01_2
+public class Program
 {
     public static void Triangle(uint n)
     {

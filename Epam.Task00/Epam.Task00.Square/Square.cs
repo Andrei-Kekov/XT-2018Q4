@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Task00_3
+public class Program
 {
     public static void Square(uint n)
     {
@@ -8,11 +8,18 @@ public class Task00_3
         uint j;
         uint center = (n / 2u) + 1u;
 
-        for (i = 1u; i <= n; i++)
+        for (i = 1u; i <= n && i > 0; i++)
         {
-            for (j = 1u; j <= n; j++)
+            for (j = 1u; j <= n && j > 0; j++)
             {
-                Console.Write(i == center && j == center ? ' ' : '*');
+                if(i == center && j == center)
+                {
+                    Console.Write(' ');
+                }
+                else
+                {
+                    Console.Write('*');
+                }
             }
 
             Console.WriteLine();

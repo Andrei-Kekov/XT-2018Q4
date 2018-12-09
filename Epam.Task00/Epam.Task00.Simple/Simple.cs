@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Task00_2
+public class Program
 {
     public static bool Simple(uint n)
     {

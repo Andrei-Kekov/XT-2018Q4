@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Task01_4
+public class Program
 {
     public static void XmasTree(uint n)
     {

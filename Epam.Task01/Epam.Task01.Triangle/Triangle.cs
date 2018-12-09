@@ -2,28 +2,31 @@
 
 public class Program
 {
-    public static void Sequence(uint n)
+    public static void Triangle(uint n)
     {
-        for (uint i = 1; i <= n && i > 0; i++)
-        {
-            Console.Write(i);
+        uint i;
+        uint j;
 
-            if (i < n)
+        for (i = 1u; i <= n; i++)
+        {
+            for (j = 1u; j <= i; j++)
             {
-                Console.Write(", ");
+                Console.Write('*');
             }
+
+            Console.WriteLine();
         }
     }
 
     public static void Main()
     {
-        Console.WriteLine("Task 0.1. Sequence");
+        Console.WriteLine("Task 1.2. Triangle");
         Console.WriteLine("Enter the value of N:");
         uint n;
 
         if (uint.TryParse(Console.ReadLine(), out n))
         {
-            Sequence(n);
+            Triangle(n);
         }
         else
         {
