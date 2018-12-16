@@ -57,6 +57,11 @@ public class Program
 
     public static void Sort(int[] a)
     {
+        if (a.Length == 0)
+        {
+            return;
+        }
+
         Sort(a, 0, a.Length - 1);
     }
 
@@ -74,9 +79,9 @@ public class Program
                 i++;
             }
 
-            while (x < a[i] && j < left)
+            while (x < a[j] && j > left)
             {
-                j++;
+                j--;
             }
 
             if (i <= j)
