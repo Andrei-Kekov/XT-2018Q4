@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 
 public static class Program
 {
-    private const string WATCH_PARAMETER = "/w";
-    private const string RESTORE_PARAMETER = "/r";
-    private const string BACKUP_FOLDER_NAME = "Backup";
-    private const string LOG_FILENAME = "log.txt";
+    public const string WATCH_PARAMETER = "/w";
+    public const string RESTORE_PARAMETER = "/r";
+    public const string EXIT_KEY = "q";
+    public const string BACKUP_FOLDER_NAME = "Backup";
+    public const string LOG_FILENAME = "log";
     private const int COPY_DELAY = 100;
     private static string backupPath;
     private static string watchPath;
-    private static DirectoryInfo backup;
-    private static Dictionary<DateTime, FileSystemEventArgs> log;
-    private static SortedList<DateTime, FileSystemEventArgs> logSorted;
+    private static DirectoryInfo backupFolder;
+    private static SortedList<DateTime, LogEntry> log;
     private static FileSystemWatcher watcher;
 
     public static void Main(string[] args)
@@ -29,7 +31,7 @@ public static class Program
 
         backupPath = Path.GetFullPath(BACKUP_FOLDER_NAME);
         watchPath = Path.GetFullPath(args[1]);
-        backup = new DirectoryInfo(backupPath);
+        backupFolder = new DirectoryInfo(backupPath);
 
         if (args[0].Equals(WATCH_PARAMETER))
         {
@@ -73,16 +75,18 @@ public static class Program
         }
         catch (FileNotFoundException)
         {
-            Console.WriteLine("Log file not found.");
+            Console.WriteLine("Log file not found. New log file will be created.");
+            log = new SortedList<DateTime, LogEntry>();
         }
         catch (Exception exc)
         {
             Console.WriteLine($"Warning! Failed to load the log file! Reason: {exc.Message}");
+            log = new SortedList<DateTime, LogEntry>();
         }
 
-        if (!backup.Exists)
+        if (!backupFolder.Exists)
         {
-            backup.Create();
+            backupFolder.Create();
         }        
 
         watcher = new FileSystemWatcher(watchPath, "*.txt");
@@ -94,63 +98,78 @@ public static class Program
         Console.WriteLine($"Watching the directory: {watchPath}");
         Console.WriteLine("Press 'q' to exit.");
 
-        while (Console.Read() != 'q')
+        while (Console.ReadLine() != EXIT_KEY)
         {
         }
 
         SaveLog();
-    }    
+    }
+
+    public static void LoadLog()
+    {
+        Stream load = File.OpenRead(Path.Combine(backupPath, LOG_FILENAME));
+        BinaryFormatter formatter = new BinaryFormatter();
+        log = (SortedList<DateTime, LogEntry>)formatter.Deserialize(load);
+        load.Close();
+    }
+
+    public static void SaveLog()
+    {
+        Stream save = File.OpenWrite(Path.Combine(backupPath, LOG_FILENAME));
+        BinaryFormatter formatter = new BinaryFormatter();
+        formatter.Serialize(save, log);
+        save.Close();
+    }
 
     public static void OnCreated(object source, FileSystemEventArgs e)
     {
         DateTime time = DateTime.Now;
+        Console.WriteLine($"{e.ChangeType}\t{e.FullPath}");
+        Thread.Sleep(COPY_DELAY);
+        string backupFile = Path.Combine(backupPath, Hash(time, e).ToString());
+        File.Copy(e.FullPath, backupFile);
 
-        if (logSorted.ContainsKey(time))
+        if (log.ContainsKey(time))
         {
-            logSorted[time] = e;
+            log[time] = new LogEntry(e.ChangeType, e.FullPath, backupFile);
         }
         else
         {
-            logSorted.Add(time, e);
+            log.Add(time, new LogEntry(e.ChangeType, e.FullPath, backupFile));
         }
-
-        Console.WriteLine($"{e.ChangeType}\t{e.FullPath}");
-        Thread.Sleep(COPY_DELAY);
-        File.Copy(e.FullPath, Path.Combine(backupPath, Hash(time, e).ToString()));
     }
 
     public static void OnDeleted(object source, FileSystemEventArgs e)
     {
         DateTime time = DateTime.Now;
+        Console.WriteLine($"{e.ChangeType}\t{e.FullPath}");
 
-        if (logSorted.ContainsKey(time))
+        if (log.ContainsKey(time))
         {
-            logSorted[time] = e;
+            log[time] = new LogEntry(e.ChangeType, e.FullPath, string.Empty);
         }
         else
         {
-            logSorted.Add(time, e);
-        }
-
-        Console.WriteLine($"{e.ChangeType}\t{e.FullPath}");
+            log.Add(time, new LogEntry(e.ChangeType, e.FullPath, string.Empty));
+        }        
     }
 
     public static void OnChanged(object source, FileSystemEventArgs e)
     {
         DateTime time = DateTime.Now;
+        Console.WriteLine($"{e.ChangeType}\t{e.FullPath}");
+        Thread.Sleep(COPY_DELAY);
+        string backupFile = Path.Combine(backupPath, Hash(time, e).ToString());
+        File.Copy(e.FullPath, backupFile);
 
-        if (logSorted.ContainsKey(time))
+        if (log.ContainsKey(time))
         {
-            logSorted[time] = e;
+            log[time] = new LogEntry(e.ChangeType, e.FullPath, backupFile);
         }
         else
         {
-            logSorted.Add(time, e);
+            log.Add(time, new LogEntry(e.ChangeType, e.FullPath, backupFile));
         }
-
-        Console.WriteLine($"{e.ChangeType}\t{e.FullPath}");
-        Thread.Sleep(COPY_DELAY);
-        File.Copy(e.FullPath, Path.Combine(backupPath, Hash(time, e).ToString()));
     }
 
     public static long Hash(DateTime time, FileSystemEventArgs e)
@@ -158,39 +177,10 @@ public static class Program
         return ((long)time.GetHashCode() << 32) | (long)e.GetHashCode();
     }
 
-    public static void SaveLog()
-    {
-        StreamWriter logWriter = new StreamWriter(Path.Combine(backupPath, LOG_FILENAME));
-
-        foreach (var point in logSorted)
-        {
-            logWriter.WriteLine(point.Key.ToBinary());
-            logWriter.WriteLine((byte)point.Value.ChangeType);
-            logWriter.WriteLine(point.Value.FullPath);
-        }
-
-        logWriter.Close();
-    }
-        
-    public static void LoadLog()
-    {
-        logSorted = new SortedList<DateTime, FileSystemEventArgs>();
-        StreamReader logReader = new StreamReader(Path.Combine(backupPath, LOG_FILENAME));
-        string time, fullPath;
-        WatcherChangeTypes wct;
-
-        while (!string.IsNullOrEmpty(time = logReader.ReadLine()))
-        {
-            wct = (WatcherChangeTypes)byte.Parse(logReader.ReadLine());
-            fullPath = logReader.ReadLine();
-            logSorted.Add(DateTime.FromBinary(long.Parse(time)), new FileSystemEventArgs(wct, Path.GetDirectoryName(fullPath), Path.GetFileName(fullPath)));
-        }
-                
-        logReader.Close();
-    }
-
     public static void Restore()
     {
+        DateTime currentVersion = DateTime.Now;
+
         try
         {
             LoadLog();
@@ -206,63 +196,87 @@ public static class Program
             return;
         }
 
-        Console.WriteLine("Please enter the date and time to recover to:");
+        string input;
         DateTime recover;
 
-        if (!DateTime.TryParse(Console.ReadLine(), out recover))
+        while (true)
         {
-            Console.WriteLine("Sorry, falied to read the date.");
-            return;
+            Console.WriteLine("Please enter the date and time to recover to, or 'q' to exit:");
+            input = Console.ReadLine();
+
+            if (input == EXIT_KEY)
+            {
+                break;
+            }            
+
+            if (!DateTime.TryParse(input, out recover))
+            {
+                Console.WriteLine("Sorry, failed to read the date.");
+                continue;
+            }
+
+            if (recover < currentVersion)
+            {
+                for (int i = log.Count - 1; i >= 0 && log.ElementAt(i).Key > recover; i--)
+                {
+                    Undo(log.ElementAt(i));
+                }
+            }
+
+            if (recover > currentVersion)
+            {
+                for (int i = log.IndexOfKey(currentVersion) + 1; i < log.Count && log.ElementAt(i).Key < recover; i++)
+                {
+                    Redo(log.ElementAt(i));
+                }
+            }
+
+            currentVersion = recover;
+            Console.WriteLine("Recovery complete!");
         }
-
-        var keys = logSorted.Keys;
-
-        for (int i = keys.Count - 1; i >= 0 && keys[i] > recover; i--)
-        {
-            Undo(keys[i], logSorted[keys[i]]);
-        }
-
-        Console.WriteLine("Recover complete!");
     }
 
-    private static void Undo(DateTime time, FileSystemEventArgs e)
+    private static void Undo(KeyValuePair<DateTime, LogEntry> entry)
     {
-        switch (e.ChangeType)
+        switch (entry.Value.Type)
         {
             case WatcherChangeTypes.Created:
-                UndoCreate(e);
+                File.Delete(entry.Value.Path);
                 break;
             case WatcherChangeTypes.Deleted:
-                UndoDelete(time, e);
+                File.Copy(LastBackup(entry.Value.Path, entry.Key), entry.Value.Path);
                 break;
             case WatcherChangeTypes.Changed:
-                UndoChange(time, e);
+                File.Copy(LastBackup(entry.Value.Path, entry.Key), entry.Value.Path, true);
                 break;
         }
     }
 
-    private static void UndoCreate(FileSystemEventArgs e)
+    private static void Redo(KeyValuePair<DateTime, LogEntry> entry)
     {
-        File.Delete(e.FullPath);
+        switch (entry.Value.Type)
+        {
+            case WatcherChangeTypes.Created:
+                File.Copy(entry.Value.BackupPath, entry.Value.Path);
+                break;
+            case WatcherChangeTypes.Deleted:
+                File.Delete(entry.Value.Path);
+                break;
+            case WatcherChangeTypes.Changed:
+                File.Copy(entry.Value.BackupPath, entry.Value.Path, true);
+                break;
+        }
     }
 
-    private static void UndoDelete(DateTime time, FileSystemEventArgs e)
+    private static string LastBackup(string path, DateTime recover)
     {
-        var keys = logSorted.Keys;
+        int i = log.IndexOfKey(recover) - 1;
 
-        int i;
-
-        for (i = keys.IndexOf(time) - 1; i >= 0 && logSorted[keys[i]].FullPath != e.FullPath; i--)
+        while (i > 0 && log.ElementAt(i).Value.Path != path)
         {
+            i--;
         }
 
-        string fileName = Hash(keys[i], logSorted[keys[i]]).ToString();
-        File.Copy(Path.Combine(backupPath, fileName), e.FullPath);
-    }
-
-    private static void UndoChange(DateTime time, FileSystemEventArgs e)
-    {
-        string fileName = Hash(time, e).ToString();
-        File.Copy(Path.Combine(backupPath, fileName), e.FullPath);
+        return log.ElementAt(i).Value.BackupPath;
     }
 }
