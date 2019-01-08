@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Epam.Task06._01_Users.Entities
 {
@@ -18,10 +19,13 @@ namespace Epam.Task06._01_Users.Entities
             }
         }
 
+        public SortedSet<int> Awards { get; set; }
+
         public User(string name, DateTime dateOfBirth)
         {
             this.Name = name;
             this.DateOfBirth = dateOfBirth;
+            this.Awards = new SortedSet<int>();
         }
     }
 }

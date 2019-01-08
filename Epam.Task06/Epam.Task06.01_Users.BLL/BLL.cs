@@ -31,5 +31,25 @@ namespace Epam.Task06._01_Users.BLL
         {
             return dal.GetUser(id);
         }
+
+        public bool AddAward(int id, string name)
+        {
+            return dal.AddAward(id, name);
+        }
+
+        public IEnumerable<int> GetAwardIDs()
+        {
+            return dal.GetAwardIDs();
+        }
+
+        public Entities.Award GetAward(int id)
+        {
+            return dal.GetAward(id);
+        }
+
+        public bool AwardUser(int user, int award)
+        {
+            return dal.AwardUser(user, award);
+        }
     }
 }

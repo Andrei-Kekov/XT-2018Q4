@@ -9,7 +9,7 @@ namespace Epam.Task06._01_Users.PL
 
         public static void Main()
         {
-            Console.WriteLine("Task 6.1. Users");
+            Console.WriteLine("Task 6. Users and Awards");
             bll = Containers.BLLContainer.GetBLL();
             Menu();
         }
@@ -17,25 +17,40 @@ namespace Epam.Task06._01_Users.PL
         private static void Menu()
         {
             Console.WriteLine("What do you want to do?");
-            Console.WriteLine("(A)dd user, (D)elete user, (S)how user list, e(X)it?");
+            Console.WriteLine("(1) Add user");
+            Console.WriteLine("(2) Delete user");
+            Console.WriteLine("(3) Award user");
+            Console.WriteLine("(4) View user list");
+            Console.WriteLine("(5) Create new award");
+            Console.WriteLine("(6) View award list");
+            Console.WriteLine("(0) Exit");
             char command;
 
             while (true)
             {
                 if (char.TryParse(Console.ReadLine(), out command))
                 {
-                    switch (char.ToLower(command))
+                    switch (command)
                     {
-                        case 'a':
+                        case '1':
                             Add();
                             break;
-                        case 'd':
+                        case '2':
                             Delete();
                             break;
-                        case 's':
+                        case '3':
+                            AwardUser();
+                            break;
+                        case '4':
                             Show();
                             break;
-                        case 'x':
+                        case '5':
+                            AddAward();
+                            break;
+                        case '6':
+                            ShowAwards();
+                            break;
+                        case '0':
                             return;
                         default:
                             Console.WriteLine("Wrong command.");
@@ -114,7 +129,104 @@ namespace Epam.Task06._01_Users.PL
                 Console.WriteLine($"Name: {user.Name}");
                 Console.WriteLine($"Date of birth: {user.DateOfBirth.Date}");
                 Console.WriteLine($"Age: {user.Age}");
+                Console.Write($"Awards: ");
+
+                if (user.Awards.Count == 0)
+                {
+                    Console.WriteLine("none");
+                }
+                else
+                {
+                    foreach (int award in user.Awards)
+                    {
+                        Console.Write($"{bll.GetAward(award).Name}, ");
+                    }
+                }
+
                 Console.WriteLine();
+            }
+        }
+
+        private static void AwardUser()
+        {
+            IEnumerable<int> ids = bll.GetIDs();
+            Entities.User user;
+            Entities.Award award;
+            int userID;
+            int awardID;
+            Console.WriteLine("Which user do you want to award?");
+
+            foreach (int id in ids)
+            {
+                user = bll.GetUser(id);
+                Console.WriteLine($"({id}) {user.Name}");
+            }
+
+            if (!int.TryParse(Console.ReadLine(), out userID))
+            {
+                Console.WriteLine("Bad user ID.");
+                return;
+            }
+
+            Console.WriteLine("Which award do you want to give?");
+            ids = bll.GetAwardIDs();
+
+            foreach (int id in ids)
+            {
+                award = bll.GetAward(id);
+                Console.WriteLine($"({id}) {award.Name}");
+            }
+
+            if (!int.TryParse(Console.ReadLine(), out awardID))
+            {
+                Console.WriteLine("Bad award ID.");
+                return;
+            }
+
+            if (bll.AwardUser(userID, awardID))
+            {
+                Console.WriteLine("Done.");
+            }
+            else
+            {
+                Console.WriteLine($"Can't award user {userID} with award {awardID}.");
+            }
+        }
+
+        private static void AddAward()
+        {
+            int id;
+            string name;
+            Console.WriteLine("Please enter the new award data:");
+            Console.Write("ID: ");
+
+            while (!int.TryParse(Console.ReadLine(), out id))
+            {
+                Console.WriteLine("ID must be an integer! Try again.");
+            }
+
+            Console.Write("Name: ");
+            name = Console.ReadLine();
+
+            if (bll.AddAward(id, name))
+            {
+                Console.WriteLine("Award successfully added.");
+            }
+            else
+            {
+                Console.WriteLine("There already is an award with this ID.");
+            }
+        }
+
+        private static void ShowAwards()
+        {
+            IEnumerable<int> ids = bll.GetAwardIDs();
+            Entities.Award award;
+
+            foreach (int id in ids)
+            {
+                award = bll.GetAward(id);
+                Console.WriteLine($"Award {id}: {award.Name}");
             }
         }
     }
