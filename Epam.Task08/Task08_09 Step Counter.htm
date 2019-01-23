@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>Task 8.9. Step Counter</title>
+		
+		<style>
+			body
+			{
+				font-family: arial
+			}
+			
+			input[type="radio"]
+			{
+				position: absolute;
+				opacity: 0;
+			}
+			
+			label
+			{
+				position: relative;
+				padding: 5px 30px;
+				background: linear-gradient(to bottom, #dfdfdf, #bfbfbf, #dfdfdf);
+				cursor: pointer
+			}
+			
+			input:checked + label
+			{
+				background: linear-gradient(to bottom, #afe18a, #66c521, #afe18a);
+				color: white
+			}
+			
+			label:nth-of-type(n+2):before
+			{
+				content: "";
+				position: absolute;
+				top: -6px;
+				left: 0;
+				margin: 0;
+				border-color: transparent transparent transparent white;
+				border-style: solid;
+				border-width: 20px 0 20px 10px;
+			}
+			
+			label:nth-of-type(-n+3):after
+			{
+				content: "";
+				position: absolute;
+				top: -6px;
+				right: 0;
+				margin: 0;
+				border-color: white transparent white transparent;
+				border-style: solid;
+				border-width: 20px 0 20px 10px;
+			}
+		</style>
+	</head>
+	
+	<body>		
+		<form>
+			<input type="radio" id="step1" name="step" value="step1">
+			<label for="step1">Шаг 1</label>
+			<input type="radio" id="step2" name="step" value="step2">
+			<label for="step2">Шаг 2</label>
+			<input type="radio" id="step3" name="step" value="step3">
+			<label for="step3">Шаг 3</label>
+			<input type="radio" id="step4" name="step" value="step4">
+			<label for="step4">Шаг 4</label>
+		</form>
+	</body>
+</html>
