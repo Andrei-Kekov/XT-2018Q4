@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>Хостинг</title>
+		
+		<style>
+			body
+			{
+				background-color: #4d6278;
+				font-family: verdana
+			}
+			
+			p, h6
+			{
+				font-size: 12pt
+			}
+			
+			h6
+			{
+				margin: 10px;
+				color: #F56332
+			}
+			
+			.prices
+			{
+				padding: 10px;
+				width: 900px;
+				background-color: white;
+				border-radius: 5px;
+				box-shadow: 0 0 10px black
+			}
+			
+			.prices td
+			{
+				width: 300px;
+				text-align: center;
+				border-right: 1px solid #d9d9d9
+			}
+			
+			.prices td:last-child
+			{
+				border-right: none
+			}
+			
+			img
+			{
+				width: 68px;
+				height: 45px;				
+				object-fit: cover
+			}
+			
+			#virtual-hosting
+			{
+				object-position: center top
+			}
+			
+			#cloud-hosting
+			{
+				object-position: 0 -47px
+			}
+			
+			#dedicated-server
+			{
+				object-position: center bottom
+			}
+			
+			.details
+			{
+				display: inline-block;
+				padding: 10px;
+				margin: 5px;
+				border-radius: 5px;
+				background-color: #F56332;
+				color: white;
+				text-decoration: none
+			}
+		</style>
+	</head>
+	
+	<body>
+		<table class="prices">
+			<tr>
+				<td>
+					<img id="virtual-hosting" src="icons.png" alt="Виртуальный хостинг" />
+					<h6>Виртуальный хостинг</h6>
+					<p>3.95$ в месяц</p>
+					<a href="" class="details">Подробнее</a>
+				</td>
+				
+				<td>
+					<img id="cloud-hosting" src="icons.png" alt="Облачный хостинг" />
+					<h6>Облачный хостинг</h6>
+					<p>68.95$ в месяц</p>
+					<a href="" class="details">Подробнее</a>
+				</td>
+				
+				<td>
+					<img id="dedicated-server" src="icons.png" alt="Выделенный сервер" />
+					<h6>Выделенный сервер</h6>
+					<p>217.95$ в месяц</p>
+					<a href="" class="details">Подробнее</a>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

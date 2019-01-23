@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Task 8.2. Registration Form</title>
+		
+		<style>
+			h2
+			{
+				margin: 0px;
+				font-weight: normal
+			}
+		
+			form
+			{
+				width: 400px;
+				background-color: #0690cf;
+				padding: 20px;
+				border: 2px solid #0075b2;
+				color: white;
+				font-family: arial
+			}
+			
+			input[type = "email"]
+			{
+				box-sizing: border-box;
+				width: 100%;
+				margin: 1ps
+			}
+			
+			input[type = "submit"]
+			{
+				background-color: #ffdf7f;
+				border: none;
+				padding: 5px
+			}
+			
+			table
+			{
+				margin: 20px 0px 0px
+			}
+			
+			td
+			{
+				padding: 10px
+			}
+			
+			hr
+			{
+				margin: 5px -20px
+			}
+		</style>
+	</head>
+	
+	<body>
+		<form>
+			<h2>Регистрация</h2>
+			<hr />
+			
+			<table cols="2">
+				<tr>
+					<td colspan="2">
+						E-mail<br />
+						<input type = "email">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Пароль<br />
+						<input type = "password">
+					</td>
+				
+					<td>
+						Ещё раз<br />
+						<input type="password">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<input type = "submit">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
