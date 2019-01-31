@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Task 9.1. Math Calculator</title>
+	</head>
+	
+	<body>
+		Введите выражение:
+		<form id="demo">
+			<input id="text" type="text">
+		</form>
+	
+		<script>
+			"use strict"
+			
+			demo.onsubmit = function()
+			{
+				alert(MathCalculator(this.text.value));
+				return false;
+			}
+			
+			function MathCalculator(expression)
+			{
+				var number = /[0-9]+(?:\.[0-9]+)?/,
+					operator = /[\+\-\*\/]/,
+					operands = expression.split(operator),
+					operators = expression.split(number),
+					i,
+					x = +operands[0];
+				
+				for (i = 0; i < operands.length; i++)
+				{
+					if (!number.test(operands[i]))
+					{
+						return undefined;
+					}
+				}
+												
+				for (i = 1; i < operands.length; i++)
+				{
+					if (operators[i] == "+")
+					{
+						x += +operands[i];
+					}
+					else if (operators[i] == "-")
+					{
+						x -= +operands[i];
+					}
+					else if (operators[i] == "*")
+					{
+						x *= +operands[i];
+					}
+					else if (operators[i] == "/")
+					{
+						x /= +operands[i];
+					}
+				}
+				
+				return x;
+			}
+		</script>
+	</body>
+</html>

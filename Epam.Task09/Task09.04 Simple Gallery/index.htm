@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Task 9.4. Simple Gallery</title>
+		
+		<style>
+			#countdown
+			{
+				font-size: 16pt;
+				font-weight: bold;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Index Page</h1>
+		<p>Next page will open in <span id="countdown"></span> seconds.</p>
+		<p>Click the timer to stop it or launch it again.</p>
+	
+		<script>
+			"use strict"
+			
+			var delay = 5000;
+			countdown.innerHTML = delay / 1000;
+			setInterval(Tick, 1000);
+			countdown.onclick = function()
+			{
+				alert("x");
+			}			
+			
+			function Tick()
+			{
+				countdown.innerHTML--;
+				
+				if (countdown.innerHTML == 0)
+				{
+					Next();
+				}
+			}
+			
+			function Next()
+			{
+				document.location.href = "page1.htm";
+			}
+		</script>
+	</body>
+</html>

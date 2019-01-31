@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Task 9.3. Butterfly Control</title>
+		
+		<style>
+			select
+			{
+				width: 100px;
+				height: 100px;
+			}
+			
+			button
+			{
+				width: 30px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<form name="boxes">
+			<table>
+				<tr>
+					<td>
+						<select id="leftBox" size="5">
+						</select>
+					</td>
+					
+					<td>
+						<button name="rightAll">&gt;&gt;</button>
+						<br>
+						<button name="right">&gt;</button>
+						<br>
+						<button name="left">&lt;</button>
+						<br>
+						<button name="leftAll">&lt;&lt;</button>
+					</td>
+					
+					<td>
+						<select id="rightBox" size="5">
+						</select>
+					</td>
+				</tr>
+			</table>
+		</form>
+	
+		<script>
+			"use strict"
+			
+			var options = [],
+				i;
+			
+			for (i = 0; i < 5; i++)
+			{
+				options[i] = document.createElement('option');
+				options[i].innerHTML = "Option " + (i + 1);
+				leftBox.appendChild(options[i]);
+			}
+			
+			boxes.right.onclick = function()
+			{
+				if (leftBox.selectedIndex != -1)
+				{
+					rightBox.appendChild(leftBox.children[leftBox.selectedIndex]);
+				}
+				
+				return false;
+			}
+			
+			boxes.rightAll.onclick = function()
+			{
+				while(leftBox.children.length)
+				{
+					rightBox.appendChild(leftBox.children[0]);
+				}
+				
+				return false;
+			}
+			
+			boxes.left.onclick = function()
+			{
+				if (rightBox.selectedIndex != -1)
+				{
+					leftBox.appendChild(rightBox.children[rightBox.selectedIndex]);
+				}
+				
+				return false;
+			}
+			
+			boxes.leftAll.onclick = function()
+			{
+				while(rightBox.children.length)
+				{
+					leftBox.appendChild(rightBox.children[0]);
+				}
+				
+				return false;
+			}
+		</script>
+	</body>
+</html>

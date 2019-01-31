@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Task 9.1. Char Remover</title>
+	</head>
+	
+	<body>
+		Введите текст:
+		<form id="demo">
+			<input id="text" type="text" value="У попа была собака.">
+		</form>
+	
+		<script>
+			"use strict"
+			
+			demo.onsubmit = function()
+			{
+				alert(CharRemover(this.text.value));
+				return false;
+			}
+			
+			function CharRemover(text)
+			{
+				var separators = [" ", "!", "?", ":", ";", ".", ","],
+					lettersToRemove = [],
+					buffer = [],
+					newText = text.split(""),
+					i, j;
+				
+				for (i = 0; i < text.length; i++)
+				{
+					if (separators.indexOf(text[i]) == -1)
+					{
+						if (lettersToRemove.indexOf(text[i]) == -1)
+						{
+							if (buffer.indexOf(text[i]) == -1)
+							{
+								buffer.push(text[i]);
+							}
+							else
+							{
+								lettersToRemove.push(text[i]);
+							}
+						}
+					}
+					else
+					{
+						buffer.splice(0, buffer.length);
+					}
+				}				
+				
+				for (i = 0; i < newText.length; i++)
+				{
+					if (lettersToRemove.indexOf(newText[i]) != -1)
+					{
+						delete newText[i];
+					}
+				}
+				return newText.join("");
+			}
+		</script>
+	</body>
+</html>
